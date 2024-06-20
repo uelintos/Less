@@ -1,0 +1,111 @@
+@import "maps.less";
+
+@bpTablet: ~"(min-width:768px) and (max-width: 1023px)";
+@bpMobile: ~"(max-width: 767px)";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    background-color: #colors[headerColor];
+}
+.container1{
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
+    a{
+        display: block;
+        text-decoration: none;
+        font-family: @mainFont;
+        font-family: @mainFont;
+        background-color: #colors[btnBackground];
+        padding: 1px 3px;
+        border-radius: 5px;
+        color: #colors[btnText];
+        border: 2px solid #colors[btnBackground];
+        &:hover{
+            background-color: #colors[headerColor];
+            color: #colors[backgroundColor]
+        }
+    }
+    li{
+        margin:8px;
+        border-radius: 7px;
+        padding: 10px;
+        text-align: center;
+    }
+}
+.branding img{
+    border-radius: 70px;
+}
+
+.container{
+    background-color: #colors[backgroundColor];
+    display: grid;
+    justify-content: center;
+    h2{
+        font-family: @mainFont;
+        font-size: 4vh;
+        color: #colors[titleColor];
+        display: grid;
+        justify-content: center;
+        padding-top: 3vh;
+        padding-bottom: 5vh;
+
+        @media @bpMobile{
+            font-size: 3vh;
+        }
+    }
+    .product{
+        display: grid;
+        grid-template-columns: repeat(4, 25vmax);
+
+        @media @bpTablet{
+            grid-template-columns: repeat(2, 50vmax);
+        }
+        @media @bpMobile {
+            grid-template-columns: repeat(1, 100vmax);
+        }
+        
+        &-item{
+            color: #colors[textColor];
+            display: block;
+            padding-bottom: 100px;
+            text-align: center; 
+            @media @bpMobile{
+                padding-bottom: 40px;
+            }
+            h4{
+                font-size: 2vh;
+                font-family: @secFont;
+                padding: 5px;
+            }
+            p{
+                font-family: @pFont;
+                margin-bottom: 16px;
+            }
+        }
+        &-button{
+            text-decoration: none;
+            font-family: @mainFont;
+            background-color: #colors[btnBackground];
+            padding: 1px 3px;
+            border-radius: 5px;
+            color: #colors[btnText];
+            border: 2px solid #colors[btnBackground];
+            &:hover{
+                background-color: #colors[backgroundColor]
+            }
+        }
+    }
+}
